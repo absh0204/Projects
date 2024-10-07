@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunar Eclipse</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        width: 100vw;
+        aspect-ratio: 1;
+        position: relative;
+        background-color: black;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+    .universe{
+        width: 400px;
+        height: 500px;
+        border-radius: 2%;
+        position: absolute;
+        background-color: #8e66544f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: skychange 8s ease infinite;
+
+    }
+    @keyframes skychange {
+      0%{
+        background-color: rgb(192, 176, 119);
+        
+      }
+      25%{
+        background-color:rgb(105, 100, 84);
+      }
+      50%{
+        background-color: #151313;
+      }
+      75%{
+        background-color:rgb(105, 100, 84);
+        
+      }
+      100%{
+        background-color: rgb(192, 176, 119);
+
+      }
+    }
+    .sun{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgb(216, 81, 13);
+        position: relative;
+
+        &::after{
+          content: "";
+          top: 0;
+          left: 0;
+          width: 200px;
+          height: 200px;
+          background-color: #242020;
+          border-radius: inherit;
+          position: absolute;
+          animation: moonwalk 8s ease-in-out infinite;
+        }
+
+    }
+    @keyframes moonwalk {
+      0%{
+        translate: 100%;
+        scale: 1;
+        opacity: 0;
+      }
+      12%{
+        opacity: 0.8;
+      }
+      25%{
+        translate:0% ;
+        scale: 0.95;
+        opacity: 1;
+      }
+      37%{
+        opacity: 0.8;
+      }
+      50%{
+        translate: -100%;
+        scale: 0.9;
+        opacity: 0;
+      }
+      /* 0%{
+        translate: 100%;
+        scale: 1;
+        opacity: 0;
+      }
+      25%{
+        opacity: 0.8;
+      }
+      50%{
+        translate:0% ;
+        scale: 0.95;
+        opacity: 1;
+      } */
+       75%{
+        opacity: 0.8;
+      }
+      100%{
+        translate: 100%;
+        scale: 0.9;
+        opacity: 0;
+      } 
+    }
+
+
+  </style>
+</head>
+<body>
+    <div class="universe">
+      <div class="sun"></div>
+    </div>
+</body>
+</html>

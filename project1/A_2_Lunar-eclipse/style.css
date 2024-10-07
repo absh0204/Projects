@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    position: relative;
+    
+    height: 100vh;
+    width: 100vw;
+    background-color: #414141;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.universe
+{
+    position: absolute;
+    border-radius: 2%;
+    height: 600px;
+    width:600px;
+    background-color: rgb(246, 143, 8);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+.solar-system{
+    background-color: rgb(231, 62, 50);
+    aspect-ratio: 1;
+    height: 30vh;
+    width: 30vh;
+    border-radius: 50%;
+    position: relative;
+    &::after{
+        content:"";
+        position: absolute;
+        width: inherit;
+        background-color: black;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        animation:moonwalk 10s ease-in-out;
+    }
+}
